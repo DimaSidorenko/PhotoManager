@@ -52,7 +52,7 @@ namespace TRRP1
             pbMain.SizeMode = PictureBoxSizeMode.Zoom;
 
             Item tempData = JsonConvert.DeserializeObject<Item>(
-                    new StreamReader(@"C:\Users\dimas\Desktop\10 TRIMESTR\ТРРП\TRRP1\TRRP1\credentials.json").ReadToEnd());
+                    new StreamReader(@"credentials.json").ReadToEnd());
 
             applicationData = tempData.installed; 
 
@@ -68,7 +68,7 @@ namespace TRRP1
 
             UserCredential credential = null;
 
-            using (var stream = new FileStream(@"C:\Users\dimas\Desktop\10 TRIMESTR\ТРРП\TRRP1\TRRP1\credentials.json", FileMode.Open, FileAccess.Read))
+            using (var stream = new FileStream(@"credentials.json", FileMode.Open, FileAccess.Read))
             {
                 credential = GoogleWebAuthorizationBroker.AuthorizeAsync(
                     GoogleClientSecrets.FromStream(stream).Secrets,
